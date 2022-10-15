@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.reto3.reto3.model.Reservation;
+import com.reto3.reto3.model.Data.CompleteAndCancelled;
+import com.reto3.reto3.model.Data.TotalAllCient;
 import com.reto3.reto3.service.ReservationService;
 
 @RestController
@@ -58,6 +60,22 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean deleteservices(@PathVariable("id") int id) {
         return reservationService.deleteservices(id);
+    }
+
+    @GetMapping("/report-dates/{date1}/{date2}")
+    public List<Reservation> getReservationsBetweenDatesReport
+    (@PathVariable("date1") String date1, @PathVariable("date2") String date2) {           
+        return reservationService.getReservationsBetweenDatesReport(date1, date2);
+    }
+
+    @GetMapping("/report-status")
+    public CompleteAndCancelled getReservationsStatusReport() {
+        return reservationService.getReservationStatusReport();
+    }
+
+    @GetMapping("/report-clients")
+    public List<TotalAllCient> getTopClientsReport() {
+        return reservationService.getTopClientsReport();
     }
 
 }

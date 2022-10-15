@@ -41,4 +41,35 @@ public class ScoreService {
         }
     }
 
+    public Score updateFull(Score score) {
+        if (validateFields(score)) {
+            if (score.getIdScore() != null) {
+                Optional<Score> scoreEncontrado = getScoreId(score.getIdScore());
+                if (!scoreEncontrado.isEmpty()) {
+                    if (score.getMessagetext() != null) {
+                        scoreEncontrado.get().setMessagetext(score.getMessagetext());
+                    }
+                    if (score.getStars() != null) {
+                        scoreEncontrado.get().setStars(score.getStars());
+                    }
+                    return scoreRepository.saveScore(scoreEncontrado.get());
+                }
+            }
+            return score;
+        }
+        return score;
+    }
+
+    public boolean deleteScore(int scoreId) {
+        Boolean result = getScoreId(scoreId).map(element -> {
+            scoreRepository.delete(element);
+            return true;
+        }).orElse(false);
+        return result;
+    }
+
+    public boolean validateFields(Score score) {
+        return ((score.getStars() >= 0 && score.getStars() <= 5) && score.getMessagetext().length() <= 250);
+    }
+
 }

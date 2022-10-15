@@ -22,7 +22,11 @@ public class PartyroomRepository {
         return partyroomCrudRepositoryInterface.findById(idPartyroom);
     }
 
-    public Partyroom savePartyroom(Partyroom partyroom){
+    public Partyroom savePartyroom(Partyroom partyroom) {
         return partyroomCrudRepositoryInterface.save(partyroom);
+    }
+
+    public void delete(Partyroom partyroom) {
+        partyroomCrudRepositoryInterface.delete(partyroom);
     }
 }

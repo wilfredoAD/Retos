@@ -26,5 +26,8 @@ public class AdminRepository {
     public Administrators saveAdministrators(Administrators administrators){
         return adminCrudRepositoryInterface.save(administrators);
     }
+    public void delete(Administrators administrators){
+        adminCrudRepositoryInterface.delete(administrators);
+    }
 
 }

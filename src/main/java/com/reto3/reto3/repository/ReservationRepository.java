@@ -29,4 +29,9 @@ public class ReservationRepository {
     return reservationCrudRepositoryInterface.save(reservation);
     }
 
+    public void delete(Reservation reservation){
+        reservationCrudRepositoryInterface.delete(reservation);
+    }
 }
+
+

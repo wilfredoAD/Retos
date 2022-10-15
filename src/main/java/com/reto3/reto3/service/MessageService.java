@@ -35,7 +35,33 @@ public class MessageService {
                 return message;
             }
         }        
-    } 
+    }
 
+    public Message updateFull(Message messages) {
+        if (validateFields(messages)) {
+            if (messages.getIdMessage() != null) {
+                Optional<Message> messageEncontrado = getMessageId(messages.getIdMessage());
+                if (!messageEncontrado.isEmpty()) {
+                    if (messages.getMessageText() != null) {
+                        messageEncontrado.get().setMessageText(messages.getMessageText());
+                    }
+                    return messageRepository.saveMessageId(messageEncontrado.get());
+                }
+            }
+            return messages;
+        }
+        return messages;
+    }
 
+    public boolean deleteMessage(int messageId) {
+        Boolean result=getMessageId(messageId).map(element ->{
+            messageRepository.delete(element);
+            return true;
+        } ).orElse(false);
+        return result;
+    }
+    public boolean validateFields(Message message){
+
+        return (message.getMessageText().length()<=250);
+    }
 }

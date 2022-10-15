@@ -26,5 +26,8 @@ public class CategoryRepository {
     public Category saveCategory(Category category) {
         return categoryCrudRepositoryInterface.save(category);
     }
+    public void delete(Category category){
+        categoryCrudRepositoryInterface.delete(category);
+    }
 
 }

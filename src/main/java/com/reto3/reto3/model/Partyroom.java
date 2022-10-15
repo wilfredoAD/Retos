@@ -28,7 +28,7 @@ public class Partyroom {
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties({ "partyroom" })
+    @JsonIgnoreProperties({ "partyrooms" })
     private Category category;
 
     @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "partyroom")
@@ -36,8 +36,8 @@ public class Partyroom {
     private List<Message> messages;
 
     @OneToMany(cascade = { CascadeType.PERSIST }, mappedBy = "partyroom")
-    @JsonIgnoreProperties({"partyroom","messages"})
-    private List<Reservation> reservation;
+    @JsonIgnoreProperties({"partyroom","message"})
+    private List<Reservation> reservations;
 
    
     public Integer getId() {
@@ -96,12 +96,12 @@ public class Partyroom {
         this.messages = messages;
     }
 
-    public List<Reservation> getReservation() {
-        return reservation;
+    public List<Reservation> getReservations() {
+        return reservations;
     }
 
-    public void setReservation(List<Reservation> reservation) {
-        this.reservation = reservation;
-    } 
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
+    }
               
 }

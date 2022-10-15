@@ -20,8 +20,8 @@ public class PartyroomService {
         return partyroomRepository.getPartyroomFull();
     } 
 
-    public Optional<Partyroom>getPartyroomId(int idPartyroom){
-        return partyroomRepository.getPartyroomId(idPartyroom);
+    public Optional<Partyroom>getPartyroomId(int id){
+        return partyroomRepository.getPartyroomId(id);
     }
 
     public Partyroom savePartyroom(Partyroom partyroom){

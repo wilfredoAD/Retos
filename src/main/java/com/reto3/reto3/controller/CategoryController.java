@@ -28,7 +28,7 @@ public class CategoryController {
     public CategoryService categoryService;
 
     @GetMapping("/all")
-    public List<Category> gCategoriesFull() {
+    public List<Category> getCategoryFull() {
         return categoryService.getCategoryFull();
     }
 

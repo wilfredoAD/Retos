@@ -31,7 +31,7 @@ public class Client {
 
     @OneToMany(cascade ={CascadeType.PERSIST}, mappedBy = "client")
     @JsonIgnoreProperties({"idclient"})
-    private List<Reservation> reservation;
+    private List<Reservation> reservations;
 
     public Integer getIdClient() {
         return idClient;
@@ -93,13 +93,13 @@ public class Client {
     }
 
 
-    public List<Reservation> getReservation() {
-        return reservation;
+    public List<Reservation> getReservations() {
+        return reservations;
     }
 
 
-    public void setReservation(List<Reservation> reservation) {
-        this.reservation = reservation;
+    public void setReservations(List<Reservation> reservations) {
+        this.reservations = reservations;
     }
-   
+
 }

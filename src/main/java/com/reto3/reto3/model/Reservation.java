@@ -1,7 +1,7 @@
 package com.reto3.reto3.model;
 
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -23,19 +23,18 @@ public class Reservation {
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private String status="Created";
+    private String status="created";
 
     @ManyToOne
     @JoinColumn(name = "partyroomId")
-    @JsonIgnoreProperties({"reservation"})
+    @JsonIgnoreProperties({"reservations"})
     private Partyroom partyroom;
 
     @ManyToOne
     @JoinColumn(name = "idClient")
-    @JsonIgnoreProperties({"reservation","messages"})
+    @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
     
-    //este puede traer problemas
     @OneToOne (cascade = {CascadeType.REMOVE},mappedBy="reservation")
     @JsonIgnoreProperties("reservation")
     private Score score;

@@ -31,8 +31,8 @@ public class PartyroomController {
         return partyroomService.getPartyroomsFull();
     } 
     @GetMapping("/{id}")
-    public Optional<Partyroom>getPartyroomId(@PathVariable("id")int idPartyroom){
-        return partyroomService.getPartyroomId(idPartyroom);
+    public Optional<Partyroom>getPartyroomId(@PathVariable("id")int id){
+        return partyroomService.getPartyroomId(id);
     }
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)

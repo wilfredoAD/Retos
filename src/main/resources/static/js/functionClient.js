@@ -10,7 +10,7 @@ function saveInformationClient() {
     let dataToSend = JSON.stringify(myData);
 
     $.ajax({
-        url: "http://localhost:8080/api/Client/save",
+        url: "http://132.145.219.71:8080/api/Client/save",
         type: "POST",
         data: dataToSend,
         datatype: "JSON",
@@ -32,7 +32,7 @@ function saveInformationClient() {
 
 function traerInformacion() {
     $.ajax({
-        url: "http://localhost:8080/api/Client/all",
+        url: "http://132.145.219.71:8080/api/Client/all",
         type: "GET",
         datatype: "JSON",
         success: function(respuesta) {
@@ -77,7 +77,7 @@ function editInformationClient() {
     let dataToSend = JSON.stringify(myData);
 
     $.ajax({
-        url: "http://localhost:8080/api/Client/update",
+        url: "http://132.145.219.71:8080/api/Client/update",
         type: "PUT",
         data: dataToSend,
         datatype: "JSON",
@@ -104,7 +104,7 @@ function borrarElemento(idElemento) {
     let dataToSend = JSON.stringify(myData);
 
     $.ajax({
-        url: "http://localhost:8080/api/Client/" + idElemento,
+        url: "http://132.145.219.71:8080/api/Client/" + idElemento,
         type: "DELETE",
         data: dataToSend,
         contentType: "application/json",

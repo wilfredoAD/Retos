@@ -7,7 +7,7 @@ function guardarInformacion() {
 
     $.ajax({
 
-        url: 'http://localhost:8080/api/Reservation/save',
+        url: 'http://132.145.219.71:8080/api/Reservation/save',
         type: 'POST',
         data: dataToSend,
         datatype: "JSON",
@@ -32,7 +32,7 @@ function guardarInformacion() {
 
 function traerInformacion() {
     $.ajax({
-            url: "http://localhost:8080/api/Reservation/all",
+            url: "http://132.145.219.71:8080/api/Reservation/all",
             type: "GET",
             datatype: "JSON",
             success: function(respuesta) {
@@ -91,7 +91,7 @@ function editarInformacion() {
     let dataToSend = JSON.stringify(myData);
 
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/update",
+        url: "http://132.145.219.71:8080/api/Reservation/update",
         type: "PUT",
         data: dataToSend,
         datatype: "JSON",
@@ -119,7 +119,7 @@ function borrarElemento(idElemento) {
     let dataToSend = JSON.stringify(myData);
 
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/" + idElemento,
+        url: "http://132.145.219.71:8080/api/Reservation/" + idElemento,
         type: "DELETE",
         data: dataToSend,
         contentType: "application/json",
@@ -144,7 +144,7 @@ function borrarElemento(idElemento) {
 
 function consultClient() {
     $.ajax({
-            url: "http://localhost:8080/api/Reservation/report-clients",
+            url: "http://132.145.219.71:8080/api/Reservation/report-clients",
             type: "GET",
             datatype: "JSON",
             success: function(respuestas) {
@@ -181,7 +181,7 @@ function pintarRespuestaTopclients(items) {
 function traerReporteStatus() {
     console.log("test");
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/report-status",
+        url: "http://132.145.219.71:8080/api/Reservation/report-status",
         type: "GET",
         datatype: "JSON",
         success: function(respuesta) {
@@ -208,7 +208,7 @@ function traerReporteDate() {
     console.log(dateTwo);
 
     $.ajax({
-        url: "http://localhost:8080/api/Reservation/report-dates/" + dateOne + "/" + dateTwo,
+        url: "http://132.145.219.71:8080/api/Reservation/report-dates/" + dateOne + "/" + dateTwo,
         type: "GET",
         datatype: "JSON",
         success: function(respuesta) {

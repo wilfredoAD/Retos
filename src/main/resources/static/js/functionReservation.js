@@ -1,4 +1,4 @@
-function guardarInformacion() {
+function saveInformacionReservation() {
 
     $("#resultado").empty();
 
@@ -78,7 +78,7 @@ function pintarRespuestaResevacion(items) {
 
 
 
-function editarInformacion() {
+function editInformacionReservation() {
     let myData = {
         idReservation: $("#idReservation").val(),
         startDate: $("#startDate").val(),

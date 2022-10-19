@@ -1,4 +1,4 @@
-function guardarInformacion() {
+function saveInformacionMessage() {
     $("#resultado").empty();
 
     let myData = {
@@ -62,7 +62,7 @@ function pintarRespuestaMensaje(items) {
 
 
 
-function editarInformacion() {
+function editInformacionMessage() {
     let myData = {
         idMessage: $("#idMessage").val(),
         messageText: $("#messageText").val(),

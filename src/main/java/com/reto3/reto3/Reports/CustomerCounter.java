@@ -1,12 +1,12 @@
-package com.reto3.reto3.model.Data;
+package com.reto3.reto3.Reports;
 
 import com.reto3.reto3.model.Client;
 
-public class TotalAllCient {
+public class CustomerCounter {
     private Long total;
     private Client client;
 
-    public TotalAllCient(Long total, Client client) {
+    public CustomerCounter(Long total, Client client) {
         this.total = total;
         this.client = client;
     }

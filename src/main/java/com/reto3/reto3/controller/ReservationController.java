@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.reto3.reto3.Reports.CompleteAndCancelled;
+import com.reto3.reto3.Reports.CustomerCounter;
 import com.reto3.reto3.model.Reservation;
-import com.reto3.reto3.model.Data.CompleteAndCancelled;
-import com.reto3.reto3.model.Data.TotalAllCient;
 import com.reto3.reto3.service.ReservationService;
 
 @RestController
@@ -74,7 +74,7 @@ public class ReservationController {
     }
 
     @GetMapping("/report-clients")
-    public List<TotalAllCient> getTopClientsReport() {
+    public List<CustomerCounter> getTopClientsReport() {
         return reservationService.getTopClientsReport();
     }
 

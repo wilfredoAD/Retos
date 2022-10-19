@@ -10,9 +10,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.reto3.reto3.Reports.CompleteAndCancelled;
+import com.reto3.reto3.Reports.CustomerCounter;
 import com.reto3.reto3.model.Reservation;
-import com.reto3.reto3.model.Data.CompleteAndCancelled;
-import com.reto3.reto3.model.Data.TotalAllCient;
 import com.reto3.reto3.repository.ReservationRepository;
 
 @Service
@@ -100,7 +100,7 @@ public class ReservationService {
         return new CompleteAndCancelled((long) cantidadCompletadas, (long) cantidadCanceladas);
     }
 
-    public List<TotalAllCient> getTopClientsReport() {
+    public List<CustomerCounter> getTopClientsReport() {
         return reservationRepository.getTopClients();
     }
 

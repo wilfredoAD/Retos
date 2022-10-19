@@ -8,9 +8,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.reto3.reto3.Reports.CustomerCounter;
 import com.reto3.reto3.model.Client;
 import com.reto3.reto3.model.Reservation;
-import com.reto3.reto3.model.Data.TotalAllCient;
 import com.reto3.reto3.repository.crud.ReservationCrudRepositoryInterface;
 
 
@@ -46,11 +46,11 @@ public class ReservationRepository {
         return reservationCrudRepositoryInterface.findAllByStatus(status);
     }
 
-    public List<TotalAllCient> getTopClients() {
-        List<TotalAllCient> respuesta =new ArrayList<>();
+    public List<CustomerCounter> getTopClients() {
+        List<CustomerCounter> respuesta =new ArrayList<>();
         List<Object[]> reporte= reservationCrudRepositoryInterface.getTotalReservationByClient();
         for (int i=0; i<reporte.size(); i++){
-            respuesta.add(new TotalAllCient((Long) reporte.get(i)[1], (Client) reporte.get(i)[0]));
+            respuesta.add(new CustomerCounter((Long) reporte.get(i)[1], (Client) reporte.get(i)[0]));
         }
         return respuesta;
     }

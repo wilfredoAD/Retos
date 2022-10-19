@@ -1,4 +1,4 @@
-package com.reto3.reto3.model.Data;
+package com.reto3.reto3.Reports;
 
 public class CompleteAndCancelled {
     private Long completed;
